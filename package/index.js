@@ -1,5 +1,5 @@
-import citation from './src/citation';
-import References, { REFERENCE_STYLES } from './src/References';
+import citation from "./dist/citation";
+import References, { REFERENCE_STYLES } from "./dist/References";
 
 export default { citation, References, REFERENCE_STYLES };
 export { citation, References, REFERENCE_STYLES };

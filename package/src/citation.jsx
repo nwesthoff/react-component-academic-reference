@@ -1,5 +1,5 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
 export default function citation(references, onSelectionDefault) {
   class Citation extends React.Component {
@@ -40,11 +40,11 @@ export default function citation(references, onSelectionDefault) {
 
   Citation.propTypes = {
     identifier: PropTypes.string.isRequired,
-    onSelection: PropTypes.func,
+    onSelection: PropTypes.func
   };
 
   Citation.defaultProps = {
-    onSelection: null,
+    onSelection: null
   };
 
   return Citation;
