@@ -74,3 +74,4 @@ I will add details on how to contribute directly once I have implemented the bas
 - Add different styles for Citations (ie `CITATION_STYLES`) so that citations can appear in a different format to `[3]`.
 - Anything else you can think of 😉
 - Add support for multiple identifiers per citation (to output `Some cited text [14, 20].`)
+- Alphabetise references by first word in the identifier (usually the author's last name)
