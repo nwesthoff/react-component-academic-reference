@@ -1,8 +1,10 @@
 {
   "name": "react-component-academic-reference",
-  "homepage": "https://www.georgegillams.co.uk/work/react-component-academic-reference",
-  "version": "1.0.4",
-  "description": "A react component for citing and displaying academic references.",
+  "homepage":
+    "https://www.georgegillams.co.uk/work/react-component-academic-reference",
+  "version": "1.0.5",
+  "description":
+    "A react component for citing and displaying academic references.",
   "main": "index.js",
   "repository": {
     "type": "git",
@@ -23,7 +25,8 @@
     "babel-preset-react": "^6.24.1"
   },
   "scripts": {
-    "build": "babel src --plugins=transform-object-rest-spread,transform-class-properties --presets=es2015,react --out-dir dist && cp ./src/references.scss ./dist",
+    "build":
+      "babel src --plugins=transform-object-rest-spread,transform-class-properties --presets=es2015,react --out-dir dist && cp ./src/references.scss ./dist",
     "prepublish": "npm run build"
   }
 }

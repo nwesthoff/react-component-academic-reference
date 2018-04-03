@@ -2,6 +2,12 @@ import React from "react";
 import PropTypes from "prop-types";
 
 export default function citation(references, onSelectionDefault) {
+  const sortedReferences = references.sort(function(a, b) {
+    return a.citationKey > b.citationKey
+      ? 1
+      : b.citationKey > a.citationKey ? -1 : 0;
+  });
+
   class Citation extends React.Component {
     constructor(props) {
       super(props);
@@ -10,8 +16,8 @@ export default function citation(references, onSelectionDefault) {
     }
 
     getIndexOfIdentifier = identifier => {
-      for (let r = 0; r < references.length; r += 1) {
-        if (references[r].citationKey === identifier) {
+      for (let r = 0; r < sortedReferences.length; r += 1) {
+        if (sortedReferences[r].citationKey === identifier) {
           return r;
         }
       }

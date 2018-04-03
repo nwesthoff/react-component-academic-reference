@@ -1,17 +1,17 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
-import STYLES from './references.scss';
+import STYLES from "./references.scss";
 
-const getClassName = className => STYLES[className] || 'UNKNOWN';
+const getClassName = className => STYLES[className] || "UNKNOWN";
 
-export const REFERENCE_STYLES = { harvard: 'harvard' };
+export const REFERENCE_STYLES = { harvard: "harvard" };
 
 const getHarvardReferenceString = reference => {
   if (!reference.entryTags) {
     return null;
   }
-  let referenceString = '';
+  let referenceString = "";
   if (reference.entryTags.author) {
     referenceString += `${reference.entryTags.author}. `;
   }
@@ -19,12 +19,12 @@ const getHarvardReferenceString = reference => {
     referenceString += `"${reference.entryTags.title}". `;
   }
   if (reference.entryTags.journal) {
-    referenceString += 'In: ';
+    referenceString += "In: ";
     referenceString += `In: ${reference.entryTags.journal}`;
     if (reference.entryTags.year) {
       referenceString += ` (${reference.entryTags.year})`;
     }
-    referenceString += '. ';
+    referenceString += ". ";
   }
   if (reference.entryTags.isbn) {
     referenceString += `ISBN: ${reference.entryTags.isbn}. `;
@@ -55,16 +55,22 @@ const References = props => {
     ...rest
   } = props;
 
-  const classNameFinal = [getClassName('references__outer')];
+  const sortedReferences = references.sort(function(a, b) {
+    return a.citationKey > b.citationKey
+      ? 1
+      : b.citationKey > a.citationKey ? -1 : 0;
+  });
+
+  const classNameFinal = [getClassName("references__outer")];
   if (className) classNameFinal.push(className);
 
-  const referenceClassNameFinal = [getClassName('references__reference')];
+  const referenceClassNameFinal = [getClassName("references__reference")];
   if (referenceClassName) classNameFinal.push(referenceClassName);
 
   return (
-    <div className={classNameFinal.join(' ')} {...rest}>
-      {references.map((r, i) => (
-        <span id={r.citationKey} className={referenceClassNameFinal.join(' ')}>
+    <div className={classNameFinal.join(" ")} {...rest}>
+      {sortedReferences.map((r, i) => (
+        <span id={r.citationKey} className={referenceClassNameFinal.join(" ")}>
           {`[${i + 1}] ${getReferenceString(referenceStyle, r)}`}
           <br />
           <br />
@@ -75,16 +81,16 @@ const References = props => {
 };
 
 References.propTypes = {
-  references: PropTypes.object.isRequired,
-  referenceStyle: PropTypes.oneOf(REFERENCE_STYLES),
+  references: PropTypes.arrayOf(PropTypes.object).isRequired,
+  referenceStyle: PropTypes.oneOf(Object.keys(REFERENCE_STYLES)),
   className: PropTypes.string,
-  referenceClassName: PropTypes.string,
+  referenceClassName: PropTypes.string
 };
 
 References.defaultProps = {
   referenceClassName: null,
   referenceStyle: REFERENCE_STYLES.harvard,
-  className: null,
+  className: null
 };
 
 export default References;

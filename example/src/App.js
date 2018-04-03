@@ -11,7 +11,7 @@ const bibtexParse = require("bibtex-parse-js");
 const myReferences = bibtexParse.toJSON(`
   @book{wu2010master,
 author = {Wu, Tim},
-title = {{The Master Switch: The Rise and Fall of Information Empires}},
+title = {The Master Switch: The Rise and Fall of Information Empires},
 publisher = {Alfred A. Knopf},
 year = {2010},
 series = {Borzoi Books},
@@ -24,23 +24,9 @@ url = {https://books.google.co.uk/books?id=tKr0QwAACAAJ},
 uri = {url{papers3://publication/uuid/4AE35FBC-F32D-4073-ACBC-D2042A78A51A}}
 }
 
-@article{Wu:2006fm,
-author = {Wu, Tim},
-title = {{Network Neutrality: Competition, Innovation, and Nondiscriminatory Access}},
-journal = {SSRN Electronic Journal},
-year = {2006},
-doi = {10.2139/ssrn.903118},
-language = {English},
-rating = {0},
-date-added = {2017-11-20T17:26:30GMT},
-date-modified = {2017-11-20T17:26:31GMT},
-url = {http://www.ssrn.com/abstract=903118},
-uri = {url{papers3://publication/doi/10.2139/ssrn.903118}}
-}
-
 @techreport{OECD:2016bt,
-author = {{OECD}},
-title = {{Economic and Social Benefits of Internet Openness}},
+author = {OECD},
+title = {Economic and Social Benefits of Internet Openness},
 year = {2016},
 month = jun,
 publisher = {OECD Publishing},
@@ -52,8 +38,22 @@ date-added = {2017-11-14T10:00:07GMT},
 date-modified = {2017-11-15T13:50:57GMT},
 url = {http://www.oecd-ilibrary.org/science-and-technology/economic-and-social-benefits-of-internet-openness_5jlwqf2r97g5-en},
 local-url = {file://localhost/Users/georgegillams/Dropbox/Library.papers3/Files/A0/A053FD2C-746D-4FEE-AB03-AB74B4763138.pdf},
-file = {{A053FD2C-746D-4FEE-AB03-AB74B4763138.pdf:/Users/georgegillams/Dropbox/Library.papers3/Files/A0/A053FD2C-746D-4FEE-AB03-AB74B4763138.pdf:application/pdf;A053FD2C-746D-4FEE-AB03-AB74B4763138.pdf:/Users/georgegillams/Dropbox/Library.papers3/Files/A0/A053FD2C-746D-4FEE-AB03-AB74B4763138.pdf:application/pdf}},
+file = {A053FD2C-746D-4FEE-AB03-AB74B4763138.pdf:/Users/georgegillams/Dropbox/Library.papers3/Files/A0/A053FD2C-746D-4FEE-AB03-AB74B4763138.pdf:application/pdf;A053FD2C-746D-4FEE-AB03-AB74B4763138.pdf:/Users/georgegillams/Dropbox/Library.papers3/Files/A0/A053FD2C-746D-4FEE-AB03-AB74B4763138.pdf:application/pdf},
 uri = {url{papers3://publication/doi/10.1787/5jlwqf2r97g5-en}}
+}
+
+@article{Wu:2006fm,
+author = {Wu, Tim},
+title = {Network Neutrality: Competition, Innovation, and Nondiscriminatory Access},
+journal = {SSRN Electronic Journal},
+year = {2006},
+doi = {10.2139/ssrn.903118},
+language = {English},
+rating = {0},
+date-added = {2017-11-20T17:26:30GMT},
+date-modified = {2017-11-20T17:26:31GMT},
+url = {http://www.ssrn.com/abstract=903118},
+uri = {url{papers3://publication/doi/10.2139/ssrn.903118}}
 }
 
   `);
